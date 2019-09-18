@@ -8,11 +8,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class ExplicitIntentActivity extends AppCompatActivity {
-
+    private EditText nama;
+    private TextView ambilnama;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_explicit_intent);
+        nama = findViewById(R.id.input_name);
+        ambilnama = findViewById(R.id.text_output);
     }
 
+    public void handleExplicitIntent(View view) {
+        String name = nama.getText().toString();
+        ambilnama.setText("Hello, "+name+", Congratulations!");
+    }
 }
